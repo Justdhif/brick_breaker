@@ -19,7 +19,7 @@ class Bat extends PositionComponent with DragCallbacks, HasGameReference<BrickBr
   final Radius cornerRadius;
 
   final _paint = Paint()
-    ..color = const Color.fromARGB(255, 0, 255, 102)
+    ..color = const Color(0xff1e6091)
     ..style = PaintingStyle.fill;
 
   @override

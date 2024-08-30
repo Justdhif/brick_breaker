@@ -19,11 +19,10 @@ class Ball extends CircleComponent with CollisionCallbacks, HasGameReference<Bri
   }) : super(
         radius: radius,
         anchor: Anchor.center,
-        paint: Paint()
-          ..color = const Color.fromARGB(255, 0, 255, 102)
-          ..style = PaintingStyle.fill,
-        children: [CircleHitbox()]
-      );
+        paint: Paint() 
+              ..color = const Color(0xff1e6091) 
+              ..style = PaintingStyle.fill, 
+        children: [CircleHitbox()]);
 
   final Vector2 velocity;
   final double difficultyModifier;
@@ -55,6 +54,7 @@ class Ball extends CircleComponent with CollisionCallbacks, HasGameReference<Bri
           delay: 0.35,
           onComplete: () {
             game.playState = PlayState.gameOver;
+            audioController.playSound('assets/sounds/game_over.wav');
           }
         ));
       }
@@ -73,7 +73,7 @@ class Ball extends CircleComponent with CollisionCallbacks, HasGameReference<Bri
         velocity.x = -velocity.x;
       }
       velocity.setFrom(velocity * difficultyModifier);
-      audioController.playSound('assets/sounds/pew3.mp3');
+      audioController.playSound('assets/sounds/pew1.mp3');
     }
   }
 }

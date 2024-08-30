@@ -64,7 +64,7 @@ class BrickBreaker extends FlameGame with HasCollisionDetection, KeyboardEvents,
     audioController.playSound('assets/sounds/pew1.mp3');
   }
 
-   void playBlockBreakSound() {
+  void playBlockBreakSound() {
     audioController.playSound('assets/sounds/pew2.mp3');
   }
 

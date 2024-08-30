@@ -9,9 +9,9 @@ import '../brick_breaker.dart';
 class PlayArea extends RectangleComponent with HasGameReference<BrickBreaker> {
   PlayArea()
     : super(
-        paint: Paint()..color = const Color.fromARGB(255, 0, 0, 0),
-        children: [RectangleHitbox()],
-      );
+          paint: Paint()..color = const Color(0xfff2e8cf),
+          children: [RectangleHitbox()],                        // Add this parameter
+        );
 
   @override
   FutureOr<void> onLoad() async {

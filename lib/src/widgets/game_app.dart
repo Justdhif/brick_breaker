@@ -24,7 +24,7 @@ class _GameAppState extends State<GameApp> {
     super.initState();
 
     audioController = AudioController();
-    _initializeAudioController();
+    Future.wait([_initializeAudioController()]);
   }
 
   Future<void> _initializeAudioController() async {
@@ -51,8 +51,8 @@ class _GameAppState extends State<GameApp> {
       theme: ThemeData(
         useMaterial3: true,
         textTheme: GoogleFonts.pressStart2pTextTheme().apply(
-          bodyColor: const Color.fromARGB(255, 255, 255, 255),
-          displayColor: const Color.fromARGB(255, 255, 255, 255),
+          bodyColor: const Color(0xff1e6091) ,
+          displayColor: const Color(0xff1e6091) ,
         ),
       ),
       home: Scaffold(
@@ -62,8 +62,8 @@ class _GameAppState extends State<GameApp> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color(0xFF000000),
-                Color(0xFF00FF66),
+                Color(0xffa9d6e5),
+                Color(0xfff2e8cf),
               ],
             ),
           ),

@@ -16,11 +16,11 @@ class Brick extends RectangleComponent with CollisionCallbacks, HasGameReference
   }) : super(
         size: Vector2(brickWidth, brickHeight),
         anchor: Anchor.center,
-        paint: Paint()
-          ..color = color
-          ..style = PaintingStyle.fill,
-        children: [RectangleHitbox()],
-      );
+        paint: Paint() 
+              ..color = color 
+              ..style = PaintingStyle.fill, 
+        children: [CircleHitbox()],
+        );
 
   final AudioController audioController;
 
@@ -39,7 +39,7 @@ class Brick extends RectangleComponent with CollisionCallbacks, HasGameReference
       game.world.removeAll(game.world.children.query<Ball>());
       game.world.removeAll(game.world.children.query<Bat>());
 
-      audioController.playSound('assets/sounds/clapping.wav');
+      audioController.playSound('assets/sounds/level_complete.wav');
     }
   }
 }
